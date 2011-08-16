@@ -1,7 +1,8 @@
 <%= form_for(@product) do |f| %>
   <% if @product.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h2>
+      <h2><%= pluralize(@product.errors.count, "error") %>
+      prohibited this product from being saved:</h2>
 
       <ul>
       <% @product.errors.full_messages.each do |msg| %>
@@ -17,7 +18,9 @@
   </div>
   <div class="field">
     <%= f.label :description %><br />
+<!-- START_HIGHLIGHT -->
     <%= f.text_area :description, :rows => 6 %>
+<!-- END_HIGHLIGHT -->
   </div>
   <div class="field">
     <%= f.label :image_url %><br />
