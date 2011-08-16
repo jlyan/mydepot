@@ -193,4 +193,11 @@ class ProductsControllerTest < ActionController::TestCase
                  product.errors[:title].join('; ')
 
   end
+  
+  test "cann't delete product in cart" do
+  	assert_difference('Product.count',0) do
+  	delete :destroy, :id => products(:ruby).to_param
+  	end
+  end
+
 end
