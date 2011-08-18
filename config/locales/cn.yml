@@ -1,0 +1,94 @@
+#START:layout
+#START:main
+#START:cart
+#START:currency
+#START:checkout
+#START:errors
+#START:model
+#START:flash
+cn:
+
+#END:cart
+#END:flash
+#END:model
+#END:errors
+#END:checkout
+#END:main
+#END:layout
+  number:
+    currency:
+      format:
+        unit:      "$US"
+        precision: 2
+        separator: ","
+        delimiter: "."
+        format:    "%n&nbsp;%u"
+#END:currency
+
+#START:model
+#START:errors
+  activerecord:
+#END:errors
+    models:
+      order:       "pedido"
+    attributes:
+      order:
+        address:   "Direcci&oacute;n"
+        name:      "Nombre"
+        email:     "E-mail"
+        pay_type:  "Forma de pago"
+#END:model
+#START:errors
+    errors:
+      messages:
+        inclusion: "不包含在列表中"
+        blank:     "不能为空"
+  errors:
+    template:
+      body:        "此订单不能被保存:"
+      header:
+        one:       "1 error ha impedido que este %{model} se guarde"
+        other:     "%{count} errores han impedido que este %{model} se guarde"
+#END:errors
+
+#START:layout
+  layouts:
+    application:
+      title:       "实效书架"
+      home:        "主页"
+      questions:   "问题"
+      news:        "新闻"
+      contact:     "联系"
+#END:layout
+
+#START:cart
+  carts:
+    cart:
+      title:       "您的购物车"
+      empty:       "清空购物车"
+      checkout:    "购买"
+#END:cart
+
+#START:main
+  store:
+    index:
+      title_html:  "您的书架目录"
+      add_html:    "添加到购物车"
+#END:main
+
+#START:checkout
+  orders:
+    new:
+      legend:       "请输入您的详细信息"
+    form:
+      name:         "姓名"
+      address_html: "地址"
+      email:        "电子邮箱"
+      pay_type:     "付款类型"
+      pay_prompt_html: "选择一种付款方式"
+      submit:       "提交"
+#END:checkout
+
+#START:flash
+  thanks:          "谢谢您的购买"
+#END:flash
